@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { toast } from "@/hooks/use-toast";
 
 interface JobPosition {
   id: number;
@@ -18,19 +19,20 @@ interface JobPosition {
 const Careers = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [selectedPosition, setSelectedPosition] = useState<string>("");
 
   const jobPositions: JobPosition[] = [
     {
       id: 1,
       title: "Protocol Officer",
       department: "VIP Services",
-      location: "Multiple Locations",
+      location: "Nairobi, Kenya",
       description: "Lead and coordinate elite protocol services for VVIP clients, ensuring flawless execution and the highest levels of service standards.",
       requirements: [
         "5+ years experience in diplomatic protocol or luxury hospitality",
-        "Fluency in multiple languages (English + 2)",
+        "Fluency in multiple languages (English and Kiswahili required)",
         "Exceptional communication and problem-solving skills",
-        "Valid passport and flexibility to travel internationally",
+        "Valid passport and flexibility to travel within East Africa",
         "Security clearance eligibility"
       ]
     },
@@ -38,7 +40,7 @@ const Careers = () => {
       id: 2,
       title: "Security Specialist",
       department: "Protection Services",
-      location: "Global",
+      location: "Nairobi with travel throughout Kenya",
       description: "Provide comprehensive security solutions for high-profile clients in diverse environments while maintaining low visibility and high effectiveness.",
       requirements: [
         "Military or law enforcement background",
@@ -52,7 +54,7 @@ const Careers = () => {
       id: 3,
       title: "Client Relations Manager",
       department: "Client Services",
-      location: "Regional Offices",
+      location: "Nairobi, Kenya",
       description: "Manage relationships with elite clientele, coordinating their service needs and ensuring exceptional delivery across all touchpoints.",
       requirements: [
         "Proven experience in luxury client management",
@@ -70,7 +72,14 @@ const Careers = () => {
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      // Reset form or show success message
+      toast({
+        title: "Application Submitted",
+        description: "Thank you for your application. Our team will review it and contact you shortly.",
+      });
+      // Reset form
+      setSelectedPosition("");
+      setSelectedFile(null);
+      (e.target as HTMLFormElement).reset();
     }, 1500);
   };
 
@@ -80,14 +89,27 @@ const Careers = () => {
     }
   };
 
+  const handleApplyForPosition = (jobTitle: string) => {
+    setSelectedPosition(jobTitle);
+    // Scroll to application form
+    const applicationForm = document.getElementById("application-form");
+    if (applicationForm) {
+      applicationForm.scrollIntoView({ behavior: 'smooth' });
+    }
+    toast({
+      title: `Applying for ${jobTitle}`,
+      description: "Please complete the application form below.",
+    });
+  };
+
   return (
-    <section id="careers" className="section-padding bg-gray-50">
+    <section id="careers" className="section-padding bg-gradient-to-b from-white to-gray-50">
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-lg mb-4 text-navy">Join Our Elite Team</h2>
           <p className="text-gray-600 text-lg">
             We're seeking exceptional professionals who thrive in high-pressure environments and are 
-            committed to providing unparalleled service to the world's most discerning clients.
+            committed to providing unparalleled service to Kenya's most discerning clients.
           </p>
         </div>
 
@@ -98,14 +120,14 @@ const Careers = () => {
             <div className="space-y-4">
               <Accordion type="single" collapsible className="w-full">
                 {jobPositions.map((job) => (
-                  <AccordionItem key={job.id} value={`item-${job.id}`}>
-                    <AccordionTrigger className="hover:text-gold">
+                  <AccordionItem key={job.id} value={`item-${job.id}`} className="border border-gold/20 bg-white rounded-lg mb-4 overflow-hidden shadow-sm">
+                    <AccordionTrigger className="hover:text-gold px-6">
                       <div className="text-left">
                         <h4 className="font-semibold text-navy">{job.title}</h4>
                         <p className="text-sm text-gray-500">{job.department} • {job.location}</p>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent>
+                    <AccordionContent className="px-6 pb-6">
                       <div className="space-y-4 pt-2">
                         <p className="text-gray-600">{job.description}</p>
                         <div>
@@ -116,7 +138,12 @@ const Careers = () => {
                             ))}
                           </ul>
                         </div>
-                        <Button className="bg-navy hover:bg-navy-light text-white">Apply for this Position</Button>
+                        <Button 
+                          className="bg-gold hover:bg-gold-light text-white"
+                          onClick={() => handleApplyForPosition(job.title)}
+                        >
+                          Apply for this Position
+                        </Button>
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -125,8 +152,8 @@ const Careers = () => {
             </div>
           </div>
           
-          <div className="w-full lg:w-1/2">
-            <Card className="border-0 shadow-lg">
+          <div className="w-full lg:w-1/2" id="application-form">
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-white to-gray-50">
               <CardContent className="pt-6">
                 <h3 className="heading-md mb-6 text-navy">Submit Your Application</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -147,8 +174,8 @@ const Careers = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input id="phone" type="tel" required />
+                    <Label htmlFor="phone">Phone (Kenyan Format)</Label>
+                    <Input id="phone" type="tel" placeholder="+254 7XX XXX XXX" required />
                   </div>
                   
                   <div className="space-y-2">
@@ -157,6 +184,8 @@ const Careers = () => {
                       id="position" 
                       className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                       required
+                      value={selectedPosition}
+                      onChange={(e) => setSelectedPosition(e.target.value)}
                     >
                       <option value="">Select a position</option>
                       {jobPositions.map(job => (
@@ -196,7 +225,7 @@ const Careers = () => {
                     </Label>
                   </div>
                   
-                  <Button type="submit" className="w-full bg-navy hover:bg-navy-light" disabled={isSubmitting}>
+                  <Button type="submit" className="w-full bg-gradient-to-r from-gold to-gold-light hover:opacity-90 text-navy font-semibold" disabled={isSubmitting}>
                     {isSubmitting ? "Submitting..." : "Submit Application"}
                   </Button>
                   
