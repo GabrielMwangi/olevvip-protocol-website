@@ -40,7 +40,8 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-gray-500">TELEPHONE</h3>
-                  <p className="text-navy">+1 (555) 123-4567 (24/7 Secure Line)</p>
+                  <p className="text-navy">+254 712 345 678 (24/7 Secure Line)</p>
+                  <p className="text-navy">+254 733 987 654</p>
                 </div>
               </div>
               
@@ -52,7 +53,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-gray-500">EMAIL</h3>
-                  <p className="text-navy">inquiries@olevvipprotocol.com</p>
+                  <p className="text-navy">info@olevvipprotocol.com</p>
                 </div>
               </div>
               
@@ -63,8 +64,8 @@ const ContactForm = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-500">GLOBAL HEADQUARTERS</h3>
-                  <p className="text-navy">London • New York • Dubai • Singapore</p>
+                  <h3 className="text-sm font-semibold text-gray-500">LOCATION</h3>
+                  <p className="text-navy">Diamond Plaza, 3rd Floor, Parklands Road, Nairobi, Kenya</p>
                 </div>
               </div>
               

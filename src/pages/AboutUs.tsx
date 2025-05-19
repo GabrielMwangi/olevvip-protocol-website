@@ -18,19 +18,19 @@ const AboutUs = () => {
       name: "Faith Wambui",
       position: "Operations Director",
       bio: "Faith brings 10+ years of experience in luxury hospitality management and executive protection. She oversees all operational aspects of OleVVIPProtocol's service delivery across Kenya.",
-      image: "https://randomuser.me/api/portraits/women/79.jpg",
+      image: "/lovable-uploads/fd8cf5ba-d1f9-4cb6-9590-c799e3079620.png",
     },
     {
-      name: "Samuel Odhiambo",
+      name: "Victor Mwangi",
       position: "Head of Security",
-      bio: "Former elite military officer with specialized training in close protection and risk assessment. Samuel leads our team of security professionals ensuring client safety at all times.",
-      image: "https://randomuser.me/api/portraits/men/26.jpg",
+      bio: "Former elite military officer with specialized training in close protection and risk assessment. Victor leads our team of security professionals ensuring client safety at all times.",
+      image: "/lovable-uploads/3a23981d-2cb1-4b42-9f48-10f3737f4021.png",
     },
     {
       name: "Amina Kimani",
       position: "Client Relations Manager",
       bio: "With a background in luxury concierge services, Amina manages relationships with our VVIP clientele, ensuring their needs are anticipated and exceeded at every touchpoint.",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
+      image: "/lovable-uploads/63d95bee-4348-4ae7-9bb0-8dbad0fe5c95.png",
     },
   ];
 

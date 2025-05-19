@@ -27,7 +27,9 @@ const Navbar = () => {
           <a href="#client-portal" className="text-white hover:text-gold transition-colors font-medium">Client Portal</a>
           <a href="#careers" className="text-white hover:text-gold transition-colors font-medium">Careers</a>
           <a href="#contact" className="text-white hover:text-gold transition-colors font-medium">Contact</a>
-          <Button className="bg-gradient-to-r from-gold to-gold-light text-navy hover:opacity-90 font-semibold">Client Login</Button>
+          <Button className="bg-gradient-to-r from-gold to-gold-light text-navy hover:opacity-90 font-semibold" asChild>
+            <Link to="/client-login">Client Login</Link>
+          </Button>
         </nav>
         
         {/* Mobile Menu Button */}
@@ -86,8 +88,8 @@ const Navbar = () => {
             >
               Contact
             </a>
-            <Button className="bg-gradient-to-r from-gold to-gold-light text-navy hover:opacity-90 w-full font-semibold">
-              Client Login
+            <Button className="bg-gradient-to-r from-gold to-gold-light text-navy hover:opacity-90 w-full font-semibold" asChild>
+              <Link to="/client-login" onClick={() => setIsMenuOpen(false)}>Client Login</Link>
             </Button>
           </nav>
         </div>
