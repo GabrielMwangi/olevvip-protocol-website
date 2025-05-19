@@ -35,37 +35,37 @@ const Services = () => {
       title: "Airport Protocol",
       description: "Expedited clearance, private terminals, and VIP transportation from runway to destination.",
       icon: <span className="text-navy text-2xl">✈️</span>,
-      image: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      image: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
     },
     {
       title: "Secure Transportation",
       description: "Armored vehicles, trained security drivers, and carefully planned routes for maximum safety.",
       icon: <span className="text-navy text-2xl">🚗</span>,
-      image: "https://images.unsplash.com/photo-1549924277-0587a3b8560a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      image: "https://images.unsplash.com/photo-1549924277-0587a3b8560a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
     },
     {
       title: "Event Security",
       description: "Discreet security teams, perimeter control, and comprehensive threat assessment for private functions.",
       icon: <span className="text-navy text-2xl">🛡️</span>,
-      image: "https://images.unsplash.com/photo-1542744173-8659b8e39c91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+      image: "https://images.unsplash.com/photo-1542744173-8659b8e39c91?ixlib=rb-4.0.3&auto=format&fit=crop&w=1169&q=80",
     },
     {
       title: "Diplomatic Logistics",
       description: "Protocol management, cultural briefings, and coordinated multi-agency arrangements for official visits.",
       icon: <span className="text-navy text-2xl">🏛️</span>,
-      image: "https://images.unsplash.com/photo-1588329943502-a9efaeb6c6cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+      image: "https://images.unsplash.com/photo-1588329943502-a9efaeb6c6cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1171&q=80",
     },
     {
       title: "Concierge Services",
       description: "Personalized assistance with accommodations, dining, and exclusive experiences worldwide.",
       icon: <span className="text-navy text-2xl">🔑</span>,
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
     },
     {
       title: "Crisis Management",
       description: "Immediate response teams, evacuation planning, and 24/7 situation monitoring for emergency scenarios.",
       icon: <span className="text-navy text-2xl">🚨</span>,
-      image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+      image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1169&q=80",
     },
   ];
 

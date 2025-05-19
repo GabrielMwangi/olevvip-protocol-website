@@ -7,6 +7,14 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    setIsMenuOpen(false);
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="fixed w-full bg-gradient-to-r from-navy via-navy/95 to-navy-dark backdrop-blur-sm z-50 border-b border-gold/30">
       <div className="container-custom py-4 flex items-center justify-between">
@@ -23,10 +31,30 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="text-white hover:text-gold transition-colors font-medium">Home</Link>
           <Link to="/about" className="text-white hover:text-gold transition-colors font-medium">About Us</Link>
-          <a href="#services" className="text-white hover:text-gold transition-colors font-medium">Services</a>
-          <a href="#client-portal" className="text-white hover:text-gold transition-colors font-medium">Client Portal</a>
-          <a href="#careers" className="text-white hover:text-gold transition-colors font-medium">Careers</a>
-          <a href="#contact" className="text-white hover:text-gold transition-colors font-medium">Contact</a>
+          <button 
+            onClick={() => scrollToSection('services')} 
+            className="text-white hover:text-gold transition-colors font-medium bg-transparent border-none cursor-pointer"
+          >
+            Services
+          </button>
+          <button 
+            onClick={() => scrollToSection('client-portal')} 
+            className="text-white hover:text-gold transition-colors font-medium bg-transparent border-none cursor-pointer"
+          >
+            Client Portal
+          </button>
+          <button 
+            onClick={() => scrollToSection('careers')} 
+            className="text-white hover:text-gold transition-colors font-medium bg-transparent border-none cursor-pointer"
+          >
+            Careers
+          </button>
+          <button 
+            onClick={() => scrollToSection('contact')} 
+            className="text-white hover:text-gold transition-colors font-medium bg-transparent border-none cursor-pointer"
+          >
+            Contact
+          </button>
           <Button className="bg-gradient-to-r from-gold to-gold-light text-navy hover:opacity-90 font-semibold" asChild>
             <Link to="/client-login">Client Login</Link>
           </Button>
@@ -60,34 +88,30 @@ const Navbar = () => {
             >
               About Us
             </Link>
-            <a 
-              href="#services" 
-              className="text-white py-2 hover:text-gold transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              onClick={() => scrollToSection('services')}
+              className="text-white py-2 hover:text-gold transition-colors text-left bg-transparent border-none cursor-pointer"
             >
               Services
-            </a>
-            <a 
-              href="#client-portal" 
-              className="text-white py-2 hover:text-gold transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() => scrollToSection('client-portal')}
+              className="text-white py-2 hover:text-gold transition-colors text-left bg-transparent border-none cursor-pointer"
             >
               Client Portal
-            </a>
-            <a 
-              href="#careers" 
-              className="text-white py-2 hover:text-gold transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() => scrollToSection('careers')}
+              className="text-white py-2 hover:text-gold transition-colors text-left bg-transparent border-none cursor-pointer"
             >
               Careers
-            </a>
-            <a 
-              href="#contact" 
-              className="text-white py-2 hover:text-gold transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-white py-2 hover:text-gold transition-colors text-left bg-transparent border-none cursor-pointer"
             >
               Contact
-            </a>
+            </button>
             <Button className="bg-gradient-to-r from-gold to-gold-light text-navy hover:opacity-90 w-full font-semibold" asChild>
               <Link to="/client-login" onClick={() => setIsMenuOpen(false)}>Client Login</Link>
             </Button>
